@@ -1,2 +1,2 @@
 # jsToolkit
-a toolkit for js develop
+a toolkit for develop

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .jelly-a {
+            z-index: 1;
+            color: white;
+            background: #40a9ff;
+            outline: none;
+            border: none;
+            padding: 0.5em 1em;
+        }
+
+        .jelly-a:hover {
+            cursor: pointer;
+            animation: jelly 0.5s;
+        }
+
+        @keyframes jelly {
+            0%,
+            100% {
+                transform: scale(1, 1);
+            }
+            25%,
+            75% {
+                transform: scale(0.9, 1.1);
+            }
+            50% {
+                transform: scale(1.1, 0.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="jelly-a">果冻特效</button>
+</body>
+
+</html>
