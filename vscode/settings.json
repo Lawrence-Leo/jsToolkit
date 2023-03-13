@@ -1,0 +1,73 @@
+{ 
+  // deploy 插件配置
+  "deploy": {
+    "packages": [
+      /* 测试环境 */
+      {
+        // "files": ["**/*"],
+        "files": ["dist/*"],
+        "exclude": ["node_modules/**", "**/node_modules/**", ".git/**", ".vscode/**"],
+        // 是否保存自动上
+        "deployOnSave": false,
+        // 打开文件时同步对应服务器代码
+        // "syncWhenOpen":"dev",
+        "button": {
+          "targets": ["dev"],
+          "text": "测试环境",
+          "tooltip": "点击发布到测试环境..."
+        }
+      },
+      /* 正式环境 */
+      {
+        // "files": ["**/*"],
+        "files": ["dist/*"],
+        "exclude": ["node_modules/**", "**/node_modules/**", ".git/**", ".vscode/**"],
+        // 是否保存自动上
+        "deployOnSave": false,
+        "button": {
+          "targets": ["pro"],
+          "text": "生产环境",
+          "tooltip": "点击发布到生产环境..."
+        }
+      }
+    ],
+    // 部署位置
+    "targets": [{
+        "type": "sftp",
+        "name": "dev",
+        // 服务器项目地址
+        "dir": "/home/ubuntu/app/",
+        // 服务器地址
+        "host": "43.138.250.42",
+        // 端口
+        "port": 22,
+        // 登录
+        "user": "ubuntu",
+        // 服务器是ssh key登录，用privateKey代替password并填写key的文件路径
+        "password": "",
+        // 密钥
+        // "privateKey": "C:/Users/64179/.ssh/login.pem",
+        // 检查更新的文件
+        // "checkBeforeDeploy": true
+      },
+      {
+        "type": "sftp",
+        "name": "pro",
+        "dir": "/home/ubuntu/app/",
+        "host": "43.138.250.42",
+        "port": 22,
+        "user": "ubuntu",
+        "password": "",
+        // "privateKey": "C:/Users/64179/.ssh/login.pem",
+      }
+    ],
+    // 成功时显示弹出窗口
+    "showPopupOnSuccess": false,
+    // 显示部署结果状态栏
+    "showDeployResultInStatusBar": false,
+    // 显示加载插件
+    "displayLoadedPlugins": false,
+    // 显示网络信息
+    "displayNetworkInfo": false
+  }
+}
